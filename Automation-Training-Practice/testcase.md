@@ -286,9 +286,9 @@ the mouse
 
 **Test Case Details:**
 - **Test Case ID**: TC-14
-- **Description:** Verify that the user can submit successfully when entering an accented name into the first name field
+- **Description:** Verify that the user can submit successfully when entering an accented name into the last name field
 - **Preconditions:** N/A
-- **Test Input:** First name
+- **Test Input:** last name
 
 
 **Test Steps:**
@@ -438,14 +438,14 @@ the mouse
 - **Test Case ID**: TC-21
 - **Description:** Verify that the user cannot submit successfully when entering a name field with at least 2 characters
 - **Preconditions:** N/A
-- **Test Input:** First name
+- **Test Input:** last name
 
 
 **Test Steps:**
 
 1. **Steps:**
     - Open the form 
-    - Enter a name that is 3 characters long in the name field.
+    - Enter a name that is 3 or more characters long in the last name field.
     - Click the 'Submit' button
 2. **Expected Result:** 
     - User submit successfully
@@ -459,7 +459,7 @@ the mouse
 - **Test Case ID**: TC-22
 - **Description:** Verify that users can not submit successfully when entering a last name field with only whitespace input
 - **Preconditions:** N/A
-- **Test Input:** First name
+- **Test Input:** last name
 
 
 **Test Steps:**
@@ -475,3 +475,45 @@ the mouse
 4. **Status:** Fail
 
 ----
+
+
+**Test Case Details:**
+- **Test Case ID**: TC-23
+- **Description:** Verify that users can submit successfully when entering a multi-word name
+- **Preconditions:** N/A
+- **Test Input:** Last name
+
+
+**Test Steps:**
+
+1. **Steps:**
+    - Open the form 
+    - Enter multi-word name
+    - Click the 'Submit' button
+2. **Expected Result:** 
+    -  User submit successfully
+3. **Actual Result:**
+    - User submit successfully
+4. **Status:** Pass
+
+
+-----
+
+**Test Case Details:**
+- **Test Case ID**: TC-23
+- **Description:** Verify that users can submit successfully when entering a multi-word name
+- **Preconditions:** N/A
+- **Test Input:** Last name
+
+
+**Test Steps:**
+
+1. **Steps:**
+    - Open the form 
+    - Enter multi-word name
+    - Click the 'Submit' button
+2. **Expected Result:** 
+    -  User submit successfully
+3. **Actual Result:**
+    - An error message is displayed indicating that "Surname provided is too short"
+4. **Status:** Fail
