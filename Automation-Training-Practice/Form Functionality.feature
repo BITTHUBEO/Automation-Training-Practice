@@ -51,7 +51,6 @@ Scenario Outline: Verify that users can submit successfully when entering valid 
     When I enter valid <First name> into the first name field
     And I click the Submit button
     Then the form should be submitted successfully
-
     Examples:
       | First name |
       | John       |
