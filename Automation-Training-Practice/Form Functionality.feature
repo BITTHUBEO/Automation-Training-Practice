@@ -39,83 +39,95 @@ Feature: Form Functionality
   
 @mytag
   Scenario Outline: Check validation messages for incomplete form submissions
-    When I submit the form with incomplete information in <First name>, <Last name> oror <Age>:
+    When I submit the form with incomplete information in <First name>, <Last name> or <Age>:
     Then Then the form should be submitted successfully
     Examples:
       | First name | Last name | Age | 
       |     Thu    |           | 25  |  
 
 @mytag
-  Scenario Outline: Check form submission with valid inputs
-    When I submit the form with valid information:
-      | First name | Last name | Age | Notes |
-      | Thu        | Nguyenn   | 25  | Some notes |
+Scenario Outline: Verify that users can submit successfully when entering valid First name
+    Given I open the form
+    When I enter valid <First name> into the first name field
+    And I click the Submit button
     Then the form should be submitted successfully
+
+    Examples:
+      | First name |
+      | John       |
 
 @mytag
   Scenario Outline: Check form submission with invalid inputs
-    When I submit the form with ininvalid information:
+    When I submit the form with ininvalid information in <First name>, <Last name>, <Age> or <Notes>:
+    Then the form should not be submitted successfully
+    And I should see the message "Special characters are not allowed"
+    Examples:
       | First name | Last name | Age | Notes |
       | Thu@       | Nguyenn   | 25  | Some notes |
       | Thu        | Nguyenn@  | 25  | Some notes |
-    Then the form should not be submitted successfully
-    And I should see the message "Special characters are not allowed"
 
 @mytag
   Scenario Outline: Check form submission with invalid inputs
-    When I submit the form with invinvalid information:
-      | First name | Last name | Age | Notes |
-      | Thu123     | Nguyenn   | 25  | Some notes |
-      | Thu        | Nguyen123 | 25  | Some notes |      
+    When I submit the form with invinvalid information in <First name>, <Last name>
     Then the form should not be submitted successfully
     And I should see the message "numeric characters are not allowed."
+    Examples:
+      | First name | Last name | Age | Notes |
+      | Thu123     | Nguyenn   | 25  | Some notes |
+      | Thu        | Nguyen123 | 25  | Some notes |     
 
 @mytag
   Scenario Outline: Check form submission with excessively long inputs
-    When I submit the form with excessively long information:
-      | First name                       | Last name                          | Age | Notes |
-      | ThisIsAnExcessivelyLongFirstName |  Nguyenn                           | 25  | Some notes |
-      | Thu                              |  ThisIsAnExcessivelyLongFirstName  | 25  | Some notes |
+    When I submit the form with excessively long information in <First name>, <Last name>
     Then the form should be submitted successfully
+    Examples:
+      | First name                       | Last name                          | 
+      | ThisIsAnExcessivelyLongFirstName |  Nguyenn                           | 
+      | Thu                              |  ThisIsAnExcessivelyLongFirstName  | 
 
 @mytag
   Scenario Outline: Check form submission with too short inputs
-    When I submit the form with too short information:
-      | First name | Last name | Age | Notes |
-      | A          | Nguyennn  | 25  | Some notes |
-      | Le         | Nguyenn   | 25  | Some notes |     
+    When I submit the form with too short information in <First name> 
     Then the form should not be submitted successfully
     And I should see the message "Firstname provided is too short"
+    Examples:
+      | First name | 
+      | A          | 
+      | Le         |    
 
 @mytag
   Scenario Outline: Check form submission with only whitespace inputs
-    When I submit the form with only whitespace inputs:
-      | First name | Last name | Age | Notes |
-      |            | Nguyennn  | 25  | Some notes |    
+    When I submit the form with only whitespace inputs in <First name>:
     Then the form should not be submitted successfully
     And I should see the message "first name field cannot be empty"
+    Examples:
+      | First name | 
+      |            | 
 
 @mytag
   Scenario Outline: Check form submission with accented characters
-    When I submit the form with accented characters in the name field
-      | First name | Last name | Age | Notes |
-      |   Thư      | Nguyennn  | 25  | Some notes |           
+    When I submit the form with accented characters in the <First name>, <Last name>        
     Then the form should be submitted successfully
+    Examples:
+      | First name | Last name
+      |   Thư      | Trần
 
 @mytag
-  Scenario: Check form submission with multi-word name
-    When I submit the form with a multi-word name
+  Scenario Outline: Check form submission with multi-word name
+    When I submit the form with a multi-word name in <First name>, <Last name>
+    Then the form should be submitted successfully
+    Examples:
       | First name | Last name   | Age | Notes      |
       | Bich Thu   |             | 25  | Some notes |
       | Thu        | Smith David | 25  | Some notes |
-    Then the form should be submitted successfully
+      | Bich Thu   | Smith David | 25  | Some notes |
 
 @mytag
-  Scenario: Check form submission with multi-word accented characters name
-    When I submit the form with a multi-word name
-      | First name | Last name | Age | Notes |
-      |   Bích Thư |           | 25  | Some notes |
+  Scenario Outline: Check form submission with multi-word accented characters name
+    When I submit the form with a multi-word name <First name>, <Last name>
     Then the form should be submitted successfully
+      | First name | Last name | Age | Notes |
+      |   Bích Thư |   Thi Thị | 25  | Some notes |
 
 @mytag
   Scenario: Check form submission with initials
@@ -139,12 +151,3 @@ Feature: Form Functionality
     Examples:
       | LastName |
       | A        |
-
-
-@mytag
-  Scenario Outline: Check form submission with only whitespace inputs
-    When I submit the form with only whitespace inputs:
-      | First name | Last name | Age | Notes |
-      |     Thu    |           | 25  | Some notes |    
-    Then the form should not be submitted successfully
-    And I should see the message "Last name field cannot be empty"
