@@ -106,7 +106,7 @@ Then('The form should be submitted successfully', () => {
 });
 pause(30)
 
-//casef07 
+//casef07- fail
 When('I submit the form with a short length in {string}, {string}, {int}', (firstname, surname, age) => {
   I.fillField('input#firstname', firstname);
   I.fillField('input#surname', surname);
@@ -115,5 +115,17 @@ When('I submit the form with a short length in {string}, {string}, {int}', (firs
 })
 Then('An error message should be displayed indicating that the surname provided is too short', () => {
   I.see('Surname provided is too short');
+});
+pause(30)
+
+//casef08
+When('I enter a valid information in {string}, {string}, {int}', (firstname, surname, age) => {
+  I.fillField('input#firstname', firstname);
+  I.fillField('input#surname', surname);
+  I.fillField('input#age', age.toString()); 
+  I.click('input[type="submit"]');
+})
+Then('The form should be submitted successfully', () => {
+  I.see('Input Validation Response');
 });
 pause(30)

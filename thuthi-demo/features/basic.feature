@@ -58,3 +58,11 @@ Feature: Form Functionality
     Examples:
       | firstname  | surname     | age |  
       | Bich Thu   | T           | 25  | 
+
+  @casef08
+  Scenario Outline: Submit form successfully with valid last name
+    When I enter a valid information in '<firstname>', '<surname>',<age>
+    Then The form should be submitted successfully
+    Examples:
+      | firstname  | surname     | age |  
+      | Thu        | Smith David | 25  |
