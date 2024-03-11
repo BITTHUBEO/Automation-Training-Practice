@@ -90,7 +90,7 @@ Given('Calculator application is open and ready for use', () => {
   });
   pause(30)
 
-
+//case07 
   When('I enter a number with a decimal point into the {float} calculator', (number1) => {
     I.fillField('input#number1', number1);
   });

@@ -17,8 +17,8 @@ exports.config = {
   hooks: [],
   gherkin: {
     features: './features/*.feature',
-    steps: ['./step_definitions/steps.js', './step_definitions/calculator.steps.js']
-  },
+    steps: ['./step_definitions/steps.js', './step_definitions/calculator.steps.js', './step_definitions/dynamicID.js', './step_definitions/AJAX.js', './step_definitions/scrollbar.js','./step_definitions/visibility.js','./step_definitions/overlapped.js']
+},
   plugins: {
     screenshotOnFail: {
       enabled: true
