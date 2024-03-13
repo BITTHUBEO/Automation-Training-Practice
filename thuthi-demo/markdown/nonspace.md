@@ -7,7 +7,7 @@
 ---------------------------
 
 **Test Case Details:**
-- **Test Case ID**: TC-nonspace-01
+- **Test Case ID**: TC-space-01
 - **Description:** Verify that the button with text 'My Button' can be found using XPath.
 - **Preconditions:** Website is open and ready for use
 - **Test Input:** N/A

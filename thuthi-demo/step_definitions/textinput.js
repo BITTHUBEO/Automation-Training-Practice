@@ -1,7 +1,7 @@
 const { I } = inject();
 
 
-Given('The website is open and ready for use', () => {
+  Given('The website is open and ready for use', () => {
     I.amOnPage('http://uitestingplayground.com/textinput');
   });
   When('I enter username into the input field', () => {
