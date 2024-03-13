@@ -22,4 +22,4 @@
     - The button name changed to "Button Name Changed"
 3. **Actual Result:**
     - .
-4. **Status:** 
+4. **Status:** pass

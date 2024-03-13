@@ -1,14 +1,14 @@
-# Test cases for Hidden layers
+# Test cases for Text input
 - Project name: Practice
 - Created by: Thu Thi
-- Date of creation: 12/03/2024
+- Date of creation: 13/03/2024
 
  
 ---------------------------
 
 **Test Case Details:**
-- **Test Case ID**: TC-click-01
-- **Description:** Verify button can be clicked
+- **Test Case ID**: TC-table-01
+- **Description:** Verify Chrome CPU load in Task Manager
 - **Preconditions:** Website is open and ready for use
 - **Test Input:** N/A
 
@@ -16,9 +16,9 @@
 **Test Steps:**
 
 1. **Steps:**
-    - Click on the blue button
+    - Compare Chrome CPU load with value in yellow label
 2. **Expected Result:** 
-    - The button button can be clicked
+    - CPU load values match
 3. **Actual Result:**
     - .
-4. **Status:** pass
+4. **Status:** 

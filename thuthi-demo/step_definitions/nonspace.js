@@ -1,6 +1,6 @@
 const { I } = inject();
 
-Given('The website is open and ready for use', () => {
+Given('The non-space website is open and ready for use', () => {
     I.amOnPage('http://uitestingplayground.com/nbsp');
 });
 

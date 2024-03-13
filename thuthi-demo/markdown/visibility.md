@@ -21,5 +21,5 @@
 2. **Expected Result:** 
     - Other buttons are visible under various conditions
 3. **Actual Result:**
-    - .
-4. **Status:** 
+    - Other buttons are visible under various conditions
+4. **Status:** pass

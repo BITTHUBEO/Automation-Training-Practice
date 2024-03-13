@@ -1,7 +1,7 @@
 const { I } = inject();
 
 
-Given('The website is open and ready for use', () => {
+Given('Website is open and ready for use', () => {
     I.amOnPage('http://uitestingplayground.com/hiddenlayers');
   });
   When('I click on the green button', () => {

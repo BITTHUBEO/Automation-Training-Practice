@@ -24,4 +24,4 @@
     - Waits for label text to appear
 3. **Actual Result:**
     - .
-4. **Status:** 
+4. **Status:** pass

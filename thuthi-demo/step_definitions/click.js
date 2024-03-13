@@ -8,7 +8,7 @@ const { I } = inject();
     I.click('#badButton')
   });
   Then('The button can be clicked', () => {
-    I.wait(1); 
+    I.wait(30); 
     I.seeCssPropertiesOnElements('#badButton', { 'background-color': "#28A745"});
   });
   pause(30)

@@ -1,7 +1,7 @@
 const { I } = inject();
 
 
-Given('The website is open and ready for use', () => {
+Given('Web is open and ready for use', () => {
     I.amOnPage('http://uitestingplayground.com/sampleapp');
   });
   When('I enter valid name into the username field', () => {

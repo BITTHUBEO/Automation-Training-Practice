@@ -1,7 +1,7 @@
 const { I } = inject();
 
 
-Given('The website is open and ready for use', () => {
+Given('The website is opened', () => {
     I.amOnPage('http://uitestingplayground.com/clientdelay');
   });
   When('I press the button and wait for data to appear', () => {
