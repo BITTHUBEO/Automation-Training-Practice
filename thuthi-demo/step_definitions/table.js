@@ -6,11 +6,11 @@ const { I } = inject();
   });
   When('I open the Task Manager page', () => {
   });
-  Then('I compare the CPU load of Chrome with the value in the yellow label',()=>{
+  Then('I compare the CPU load of Chrome with the value in the yellow label', async()=>{
     I.wait(10);
-    const chrome = I.grabTextFrom('//html/body/section/div/div/div[3]/div[2]/span[3]')
+    const chrome = await I.grabTextFrom('//html/body/section/div/div/div[3]/div[2]/span[3]')
     I.wait(10);
-    const yellow = I.grabTextFrom('p.bg-warning')
+    const yellow = await I.grabTextFrom('p.bg-warning')
     if (chrome === yellow) {
         console.log('CPU load values match');
     } else {
