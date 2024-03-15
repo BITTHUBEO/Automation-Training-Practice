@@ -1,5 +1,8 @@
 const { I } = inject();
 
+    Before((test) => {
+    test.retries(3); 
+    });
 
     Given('The mouse over website is open', () => {
         I.amOnPage('http://uitestingplayground.com/mouseover');
